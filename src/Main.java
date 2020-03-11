@@ -50,13 +50,17 @@ public class Main {
     }
 
     public static void removePerson(String name)  {
+        boolean foundPerson = false;
         for (int i = 0; i < person.size(); i++) {
-            if (!(name.equals(person.get(i).getNavn()))) {
-                System.out.println("Ingen med det navn");
-            } else {
-                person.remove(person.get(i));
+            if ((name.equals(person.get(i).getNavn()))) {
                 System.out.println("Person fjernet");
+                person.remove(person.get(i));
+                foundPerson = true;
             }
+
+        }
+        if (!foundPerson){
+            System.out.println("Ingen med navnet");
         }
     }
 
